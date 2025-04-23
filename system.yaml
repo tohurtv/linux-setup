@@ -71,6 +71,7 @@ packages:
   - 'breeze5'
   - 'plasma6-applets-window-title'
   - 'plasma6-wallpapers-wallpaper-engine-git'
+  - 'layer-shell-qt5'
 
   # --- Wine & Compatibility Tools ---
   - 'alsa-lib'
@@ -168,5 +169,6 @@ services:
 commands:
   - 'curl -fsSL https://ollama.com/install.sh | sh'
   - 'mkdir -p /etc/systemd/system/ollama.service.d && curl -sSL https://raw.githubusercontent.com/tohurtv/Blend-os-setup/main/ollama-service-override.conf -o /etc/systemd/system/ollama.service.d/override.conf && systemctl enable ollama'
+  - 'curl -sSL https://raw.githubusercontent.com/tohurtv/Blend-os-setup/main/sddm-wayland.conf -o /etc/sddm.conf.d/10-wayland.conf'
   - 'curl -sSL https://raw.githubusercontent.com/tohurtv/blend-update/main/install.sh | bash'
   - 'rm -rf /var/cache/pacman'
