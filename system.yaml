@@ -160,6 +160,7 @@ aur-packages:
   # --- Gaming ---
   - 'xemu-bin'
   - 'equibop-bin'
+  - 'unleashedrecomp-bin'
 
   # --- Multimedia / Audio ---
   - 'mpris-scrobbler'
