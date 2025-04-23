@@ -14,6 +14,12 @@ packages:
   - 'btrfs-progs'
   - 'btrfs-assistant'
 
+  # --- Virtualization ---
+  - 'qemu-desktop'
+  - 'libvirt'
+  - 'edk2-ovmf'
+  - 'virt-manager'
+
   # --- GPU / Vulkan / Performance ---
   - 'gamemode'
   - 'gamescope'
@@ -183,5 +189,6 @@ commands:
   - 'curl -fsSL https://ollama.com/install.sh | sh'
   - 'mkdir -p /etc/systemd/system/ollama.service.d && curl -sSL https://raw.githubusercontent.com/tohurtv/Blend-os-setup/main/ollama-service-override.conf -o /etc/systemd/system/ollama.service.d/override.conf && systemctl enable ollama'
   - 'mkdir -p /etc/sddm.conf.d && curl -sSL https://raw.githubusercontent.com/tohurtv/Blend-os-setup/main/sddm-wayland.conf -o /etc/sddm.conf.d/10-wayland.conf'
+  - 'systemctl enable libvirtd.service'
   - 'curl -sSL https://raw.githubusercontent.com/tohurtv/blend-update/main/install.sh | bash'
   - 'rm -rf /var/cache/pacman'
