@@ -11,6 +11,8 @@ packages:
   - 'mesa-utils'
   - 'noto-color-emoji-fontconfig'
   - 'distrobox'
+  - 'btrfs-progs'
+  - 'btrfs-assistant'
 
   # --- GPU / Vulkan / Performance ---
   - 'gamemode'
@@ -58,6 +60,7 @@ packages:
   - 'chromium'
   - 'chromium-widevine'
   - 'google-chrome'
+  - 'qbittorrent'
   - 'openrgb'
   - 'rustdesk-bin'
 
@@ -151,6 +154,11 @@ package-repos:
 aur-packages:
   # --- General ---
   - 'com.cassidyjames.butler'
+
+  # --- GPU /Performance
+  - 'gpu-screen-recorder'
+  - 'gpu-screen-recorder-notification'
+  - 'gpu-screen-recorder-ui'
 
   # --- Plasma / Theming ---
   - 'plasma6-themes-vapor-steamos'
