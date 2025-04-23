@@ -152,11 +152,14 @@ aur-packages:
   - 'tela-circle-icon-theme-standard-git'
   - 'plasma6-applets-separator-git'
 
+  # --- Gaming ---
+  - 'xemu-bin'
+  - 'equibop-bin'
+
   # --- Multimedia / Audio ---
   - 'mpris-scrobbler'
   - 'plex-desktop'
   - 'plexamp-appimage'
-  - 'equibop-bin'
 
 services:
   - 'lactd'
