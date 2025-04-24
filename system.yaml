@@ -18,6 +18,7 @@ packages:
   - 'qemu-desktop'
   - 'libvirt'
   - 'edk2-ovmf'
+  - 'swtpm'
   - 'virt-manager'
 
   # --- GPU / Vulkan / Performance ---
