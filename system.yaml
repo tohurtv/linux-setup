@@ -11,11 +11,12 @@ packages:
   - 'mesa-utils'
   - 'noto-color-emoji-fontconfig'
   - 'distrobox'
+  - 'boxbuddy'
+  - 'easyeffects'
   - 'btrfs-progs'
   - 'btrfs-assistant'
   - 'unarchiver'
   - 'unrar'
-  - 'kcalc'
 
   # --- Virtualization ---
   - 'qemu-desktop'
@@ -164,6 +165,8 @@ package-repos:
 aur-packages:
   # --- General ---
   - 'com.cassidyjames.butler'
+  - 'gearlever'
+  - 'podman-desktop-git'
 
   # --- GPU /Performance
   - 'gpu-screen-recorder'
