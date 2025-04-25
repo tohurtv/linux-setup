@@ -1,4 +1,4 @@
-arch-repo: https://geo.mirror.pkgbuild.com
+arch-repo: https://mirror.arizona.edu/archlinux
 impl: http://github.com/tohurtv/blend-os-tracks/raw/main
 repo: https://pkg-repo.blendos.co
 track: plasma-minimal
