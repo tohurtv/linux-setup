@@ -8,131 +8,54 @@ packages:
   - 'bluez-utils'
   - 'i2c-tools'
   - 'lvm2'
+  - 'cups'
   - 'mesa-utils'
   - 'noto-color-emoji-fontconfig'
   - 'distrobox'
-  - 'boxbuddy'
-  - 'easyeffects'
   - 'btrfs-progs'
   - 'btrfs-assistant'
   - 'unarchiver'
   - 'unrar'
-
-  # --- Virtualization ---
+  - 'openh264'
+  - 'openrgb'
+  - 'gst-plugins-bad'
+  - 'gst-plugins-base'
+  - 'gst-plugins-base-libs'
+  - 'gst-plugins-good'
+  - 'gst-plugins-ugly'
+  - 'alsa-lib'
+  - 'alsa-plugins'
+  - 'mesa'
+  - 'mesa-libgl'
   - 'qemu-desktop'
   - 'libvirt'
   - 'edk2-ovmf'
   - 'swtpm'
   - 'virt-manager'
-
-  # --- GPU / Vulkan / Performance ---
   - 'gamemode'
   - 'gamescope'
-  - 'lact'
   - 'lib32-gamemode'
   - 'lib32-vulkan-radeon'
   - 'vulkan-headers'
   - 'vulkan-icd-loader'
   - 'vulkan-radeon'
   - 'vulkan-tools'
-
-  # --- Kernel Modules & Drivers ---
   - 'xpadneo-dkms-git'
-
-  # --- Gaming ---
-  - 'cemu-git'
-  - 'dolphin-emu'
-  - 'dolphin-emu-tool'
-  - 'duckstation'
   - 'goverlay'
-  - 'heroic-games-launcher-bin'
   - 'lib32-obs-vkcapture-git'
-  - 'lutris'
   - 'obs-vkcapture-git'
-  - 'pcsx2-git'
-  - 'protontricks-git'
-  - 'protonup-qt'
-  - 'retroarch'
-  - 'rpcs3-git'
-  - 'ryujinx'
-  - 'steam'
-
-  # --- Office & Media ---
-  - 'betterbird-bin'
-  - 'libreoffice-fresh'
-
-  # --- Development ---
   - 'mongodb'
   - 'nodejs'
   - 'npm'
-  - 'visual-studio-code-bin'
-
-  # --- General Purpose Apps ---
-  - 'chromium'
-  - 'chromium-widevine'
-  - 'google-chrome'
-  - 'qbittorrent'
-  - 'openrgb'
-  - 'rustdesk-bin'
-
-  # --- GTK & App Integration ---
   - 'appmenu-gtk-module'
   - 'libdbusmenu-glib'
   - 'libdbusmenu-gtk2'
   - 'libdbusmenu-gtk3'
   - 'libdbusmenu-lxqt'
-
-  # --- Plasma UI Enhancements ---
   - 'breeze5'
   - 'plasma6-applets-window-title'
   - 'plasma6-wallpapers-wallpaper-engine-git'
   - 'layer-shell-qt5'
-
-  # --- Wine & Compatibility Tools ---
-  - 'alsa-lib'
-  - 'alsa-plugins'
-  - 'autoconf'
-  - 'bison'
-  - 'cups'
-  - 'desktop-file-utils'
-  - 'flex'
-  - 'fontconfig'
-  - 'freetype2'
-  - 'gcc-libs'
-  - 'gettext'
-  - 'gnutls'
-  - 'gst-plugins-bad'
-  - 'gst-plugins-base'
-  - 'gst-plugins-base-libs'
-  - 'gst-plugins-good'
-  - 'gst-plugins-ugly'
-  - 'libcups'
-  - 'libgphoto2'
-  - 'libpcap'
-  - 'libpulse'
-  - 'libunwind'
-  - 'libxcomposite'
-  - 'libxcursor'
-  - 'libxi'
-  - 'libxinerama'
-  - 'libxkbcommon'
-  - 'libxrandr'
-  - 'libxxf86vm'
-  - 'mesa'
-  - 'mesa-libgl'
-  - 'mingw-w64-gcc'
-  - 'opencl-headers'
-  - 'opencl-icd-loader'
-  - 'pcsclite'
-  - 'perl'
-  - 'samba'
-  - 'sane'
-  - 'sdl2'
-  - 'unixodbc'
-  - 'wayland'
-  - 'wine-gecko'
-  - 'wine-mono'
-
 # --- Davinci Resolve ---
   - 'glu'
   - 'gtk2'
@@ -163,33 +86,12 @@ package-repos:
     repo-url: 'https://cdn-mirror.chaotic.cx/$repo/$arch'
 
 aur-packages:
-  # --- General ---
-  - 'com.cassidyjames.butler'
-  - 'gearlever'
-  - 'podman-desktop-git'
-
-  # --- GPU /Performance
-  - 'gpu-screen-recorder'
-  - 'gpu-screen-recorder-notification'
-  - 'gpu-screen-recorder-ui'
-
-  # --- Plasma / Theming ---
   - 'plasma6-themes-vapor-steamos'
   - 'tela-circle-icon-theme-standard-git'
   - 'plasma6-applets-separator-git'
-
-  # --- Gaming ---
-  - 'xemu-bin'
-  - 'equibop-bin'
-  - 'unleashedrecomp-bin'
-
-  # --- Multimedia / Audio ---
   - 'mpris-scrobbler'
-  - 'plex-desktop'
-  - 'plexamp-appimage'
 
 services:
-  - 'lactd'
   - 'mongodb'
   - 'libvirtd'
 
@@ -197,6 +99,9 @@ commands:
   - 'curl -fsSL https://ollama.com/install.sh | sh'
   - 'mkdir -p /etc/systemd/system/ollama.service.d && curl -sSL https://raw.githubusercontent.com/tohurtv/Blend-os-setup/main/ollama-service-override.conf -o /etc/systemd/system/ollama.service.d/override.conf && systemctl enable ollama'
   - 'mkdir -p /etc/sddm.conf.d && curl -sSL https://raw.githubusercontent.com/tohurtv/Blend-os-setup/main/sddm-wayland.conf -o /etc/sddm.conf.d/10-wayland.conf'
+  - 'curl -sSL https://raw.githubusercontent.com/tohurtv/Blend-os-setup/main/lactd.service -o /etc/systemd/system/lactd.service && systemctl enable lactd.service'
   - 'curl -sSL https://raw.githubusercontent.com/tohurtv/blend-update/main/install.sh | bash'
   - 'rm -rf /var/cache/pacman'
-  - 'rm /usr/share/applications/assistant.desktop && rm /usr/share/applications/avahi-discover.desktop && rm /usr/share/applications/bvnc.desktop && rm /usr/share/applications/electron*.desktop && rm /usr/share/applications/*-openjdk.desktop && rm /usr/share/applications/linguist.desktop && rm /usr/share/applications/lstopo.desktop && rm /usr/share/applications/qdbusviewer.desktop && rm /usr/share/applications/qv4l2.desktop && rm /usr/share/applications/qvidcap.desktop && rm /usr/share/applications/stoken-*.desktop && rm /usr/share/applications/org.kde.kuserfeedback-console.desktop && rm /usr/share/applications/bssh.desktop'
+  - 'rm /usr/share/applications/assistant.desktop && rm /usr/share/applications/avahi-discover.desktop && rm /usr/share/applications/bvnc.desktop && rm /usr/share/applications/electron*.desktop && rm /usr/share/applications/*-openjdk.desktop && rm /usr/share/applications/linguist.desktop && rm /usr/share/applications/lstopo.desktop && rm /usr/share/applications/qdbusviewer.desktop && rm /usr/share/applications/qv4l2.desktop && rm /usr/share/applications/qvidcap.desktop && rm /usr/share/applications/stoken-*.desktop && rm /usr/share/applications/org.kde.kuserfeedback-console.desktop && rm /usr/share/applications/bssh.desktop && rm /../usr/share/applications/cups.desktop'
+  - 'ln -s /usr/lib/libopenh264.so /usr/lib/libopenh264.so.7'
+  - 'flatpak override --system --env=GTK_THEME=Breeze'
