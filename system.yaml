@@ -8,7 +8,6 @@ packages:
   - 'bluez-utils'
   - 'i2c-tools'
   - 'lvm2'
-  - 'cups'
   - 'mesa-utils'
   - 'noto-color-emoji-fontconfig'
   - 'btrfs-progs'
@@ -50,6 +49,8 @@ packages:
   - 'plasma6-wallpapers-wallpaper-engine-git'
   - 'layer-shell-qt5'
   - 'zenity'
+  - 'scx-scheds'
+  - 'zram-generator'
 # --- Davinci Resolve ---
   - 'glu'
   - 'gtk2'
@@ -84,19 +85,19 @@ aur-packages:
   - 'tela-circle-icon-theme-standard-git'
   - 'plasma6-applets-separator-git'
   - 'mpris-scrobbler'
-  - 'zram-generator-defaults'
   - 'notify-send-py'
   #- 'discover-snap'
 
 services:
   - 'mongodb'
   - 'libvirtd'
+  - 'scx'
 
 commands:
-  - 'mkdir -p /etc/udev/rules.d && curl -sSL https://raw.githubusercontent.com/tohurtv/Blend-os-setup/main/90-amdgpu.rules -o /etc/udev/rules.d/90-amdgpu.rules && curl -sSL https://raw.githubusercontent.com/tohurtv/Blend-os-setup/main/91-kfd.rules -o /etc/udev/rules.d/91-kfd.rules && curl -sSL https://raw.githubusercontent.com/StreamController/StreamController/main/udev.rules -o /etc/udev/rules.d/60-streamdeck.rules'
-  - 'mkdir -p /etc/sddm.conf.d && curl -sSL https://raw.githubusercontent.com/tohurtv/Blend-os-setup/main/sddm-wayland.conf -o /etc/sddm.conf.d/10-wayland.conf'
-  - 'curl -sSL https://openrgb.org/releases/release_0.9/60-openrgb.rules -o /usr/lib/udev/rules.d/60-openrgb.rules'
-  - 'curl -sSL https://raw.githubusercontent.com/tohurtv/Blend-os-setup/main/lactd.service -o /etc/systemd/system/lactd.service && systemctl enable lactd.service'
+  - 'mkdir -p /etc/udev/rules.d && curl -sSL https://raw.githubusercontent.com/tohurtv/Blend-os-setup/main/udev-rules/90-amdgpu.rules -o /etc/udev/rules.d/90-amdgpu.rules && curl -sSL https://raw.githubusercontent.com/tohurtv/Blend-os-setup/main/udev-rules/91-kfd.rules -o /etc/udev/rules.d/91-kfd.rules && curl -sSL https://raw.githubusercontent.com/tohurtv/Blend-os-setup/main/udev-rules/30-zram.rules -o /etc/udev/rules.d/30-zram.rules
+&& curl -sSL https://raw.githubusercontent.com/StreamController/StreamController/main/udev.rules -o /etc/udev/rules.d/60-streamdeck.rules && curl -sSL https://openrgb.org/releases/release_0.9/60-openrgb.rules -o /usr/lib/udev/rules.d/60-openrgb.rules'
+  - 'mkdir -p /etc/sddm.conf.d && curl -sSL https://raw.githubusercontent.com/tohurtv/Blend-os-setup/main/etc/sddm-wayland.conf -o /etc/sddm.conf.d/10-wayland.conf'
+  - 'curl -sSL https://raw.githubusercontent.com/tohurtv/Blend-os-setup/main/systemd/lactd.service -o /etc/systemd/system/lactd.service && systemctl enable lactd.service && curl -sSL https://raw.githubusercontent.com/tohurtv/Blend-os-setup/main/systemd/zram-generator.conf -o /etc/systemd/zram-generator.conf'
   - 'curl -sSL https://raw.githubusercontent.com/tohurtv/blend-update/main/install.sh | bash'
   - 'rm -rf /var/cache/pacman'
   - 'rm /usr/share/applications/assistant.desktop && rm /usr/share/applications/avahi-discover.desktop && rm /usr/share/applications/bvnc.desktop && rm /usr/share/applications/electron*.desktop && rm /usr/share/applications/*-openjdk.desktop && rm /usr/share/applications/linguist.desktop && rm /usr/share/applications/lstopo.desktop && rm /usr/share/applications/qdbusviewer.desktop && rm /usr/share/applications/qv4l2.desktop && rm /usr/share/applications/qvidcap.desktop && rm /usr/share/applications/stoken-*.desktop && rm /usr/share/applications/org.kde.kuserfeedback-console.desktop && rm /usr/share/applications/bssh.desktop && rm /../usr/share/applications/cups.desktop && rm /usr/share/applications/designer.desktop'
