@@ -24,7 +24,7 @@ mkdir -p /etc/sddm.conf.d
 curl -sSL https://raw.githubusercontent.com/$REPO/main/etc/sddm.conf.d/sddm-wayland.conf -o /etc/sddm.conf.d/10-wayland.conf
 
 #systemd setup
-curl -sSL https://raw.githubusercontent.com/$REPO/main/systemd/lactd.service -o /etc/systemd/system/lactd.service 
+curl -sSL https://raw.githubusercontent.com/$REPO/main/systemd/system/lactd.service -o /etc/systemd/system/lactd.service 
 curl -sSL https://raw.githubusercontent.com/$REPO/main/systemd/zram-generator.conf -o /etc/systemd/zram-generator.conf
 
 #Enbale services
