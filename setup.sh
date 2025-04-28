@@ -25,6 +25,7 @@ git clone --depth 1 "$REPO_URL" "$TMP_DIR"
 # Define source and destination directories
 declare -A DIRS=(
   ["modprobe.d"]="/etc/modprobe.d"
+  ["sddm.conf.d"]="/etc/sddm.conf.d"
   ["sysctl.d"]="/etc/sysctl.d"
   ["systemd"]="/etc/systemd"
   ["udev-rules"]="/etc/udev/rules.d"
