@@ -24,16 +24,21 @@ curl -sSL https://raw.githubusercontent.com/$REPO/main/udev-rules/99-cpu-dma-lat
 curl -sSL https://raw.githubusercontent.com/$REPO/main/udev-rules/60-streamdeck.rules -o /etc/udev/rules.d/60-streamdeck.rules 
 curl -sSL https://raw.githubusercontent.com/$REPO/main/udev-rules/60-openrgb.rules -o /usr/lib/udev/rules.d/60-openrgb.rules
 
+#add scipts and binaries to the system
+curl -sSL https://raw.githubusercontent.com/$REPO/main/usr/bin/pci-latency -o /usr/bin/pci-latency
+
 #SDDM Wayland conf
 mkdir -p /etc/sddm.conf.d 
 curl -sSL https://raw.githubusercontent.com/$REPO/main/sddm.conf.d/sddm-wayland.conf -o /etc/sddm.conf.d/10-wayland.conf
 
 #systemd setup
-curl -sSL https://raw.githubusercontent.com/$REPO/main/systemd/system/lactd.service -o /etc/systemd/system/lactd.service 
+curl -sSL https://raw.githubusercontent.com/$REPO/main/systemd/system/lactd.service -o /etc/systemd/system/lactd.service
+curl -sSL https://raw.githubusercontent.com/$REPO/main/systemd/system/pci-latency.service -o /etc/systemd/system/pci-latency.service
 curl -sSL https://raw.githubusercontent.com/$REPO/main/systemd/zram-generator.conf -o /etc/systemd/zram-generator.conf
 
 #Enbale services
 systemctl enable lactd.service
+systemctl enable pci-latency.service
 
 #sysctl.d setup
 mkdir -p /etc/sysctl.d 
