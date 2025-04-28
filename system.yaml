@@ -96,4 +96,3 @@ services:
 commands:
   - 'curl -sSL https://raw.githubusercontent.com/tohurtv/Blend-os-setup/main/setup.sh | bash'
   - 'curl -sSL https://raw.githubusercontent.com/tohurtv/blend-update/main/install.sh | bash'
-  - 'rm -rf /var/cache/pacman'

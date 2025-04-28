@@ -9,43 +9,34 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 # Define variables
-REPO_URL="https://github.com/tohurtv/Blend-os-setup"
-TMP_DIR=$(mktemp -d)
+REPO="tohurtv/Blend-os-setup"
 
-# Cleanup function to remove temporary directory
-cleanup() {
-  rm -rf "$TMP_DIR"
-}
-trap cleanup EXIT
+#udev rules
+mkdir -p /etc/udev/rules.d 
+curl -sSL https://raw.githubusercontent.com/$REPO/main/udev-rules/90-amdgpu.rules -o /etc/udev/rules.d/90-amdgpu.rules 
+curl -sSL https://raw.githubusercontent.com/$REPO/main/udev-rules/91-kfd.rules -o /etc/udev/rules.d/91-kfd.rules 
+curl -sSL https://raw.githubusercontent.com/$REPO/main/udev-rules/30-zram.rules -o /etc/udev/rules.d/30-zram.rules
+curl -sSL https://raw.githubusercontent.com/$REPO/main/udev-rules/60-streamdeck.rules -o /etc/udev/rules.d/60-streamdeck.rules 
+curl -sSL https://raw.githubusercontent.com/$REPO/main/udev-rules/60-openrgb.rules -o /usr/lib/udev/rules.d/60-openrgb.rules
 
-# Clone the repository
-echo "Cloning repository..."
-git clone --depth 1 "$REPO_URL" "$TMP_DIR"
+#SDDM Wayland conf
+mkdir -p /etc/sddm.conf.d 
+curl -sSL https://raw.githubusercontent.com/$REPO/main/etc/sddm.conf.d/sddm-wayland.conf -o /etc/sddm.conf.d/10-wayland.conf
 
-# Define source and destination directories
-declare -A DIRS=(
-  ["modprobe.d"]="/etc/modprobe.d"
-  ["sddm.conf.d"]="/etc/sddm.conf.d"
-  ["sysctl.d"]="/etc/sysctl.d"
-  ["systemd"]="/etc/systemd"
-  ["udev-rules"]="/etc/udev/rules.d"
-)
-
-# Install configuration files
-for src in "${!DIRS[@]}"; do
-  src_path="$TMP_DIR/etc/$src"
-  dest_path="${DIRS[$src]}"
-  if [[ -d "$src_path" ]]; then
-    echo "Installing $src to $dest_path..."
-    mkdir -p "$dest_path"
-    cp -r "$src_path/." "$dest_path/"
-  else
-    echo "Directory $src_path does not exist. Skipping."
-  fi
-done
+#systemd setup
+curl -sSL https://raw.githubusercontent.com/$REPO/main/systemd/lactd.service -o /etc/systemd/system/lactd.service 
+curl -sSL https://raw.githubusercontent.com/$REPO/main/systemd/zram-generator.conf -o /etc/systemd/zram-generator.conf
 
 #Enbale services
 systemctl enable lactd.service
+
+#sysctl.d setup
+mkdir -p /etc/sysctl.d 
+curl -sSL https://raw.githubusercontent.com/$REPO/main/etc/sysctl.d/99-cachyos-settings.conf -o /etc/sysctl.d/99-cachyos-settings.conf
+
+#modprobe.d setup
+mkdir -p /etc/modprobe.d 
+curl -sSL https://raw.githubusercontent.com/$REPO/main/etc/modprobe.d/blacklist.conf -o /etc/modprobe.d/blacklist.conf
 
 # rm .desktops
 rm /usr/share/applications/assistant.desktop 
@@ -66,5 +57,8 @@ rm /usr/share/applications/designer.desktop
 
 # create any needed symlinks
 ln -s /usr/lib/libopenh264.so /usr/lib/libopenh264.so.7
+
+# clean pacman cache
+rm -rf /var/cache/pacman
 
 echo "Installation complete."
