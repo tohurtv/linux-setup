@@ -21,7 +21,7 @@ curl -sSL https://raw.githubusercontent.com/$REPO/main/udev-rules/60-openrgb.rul
 
 #SDDM Wayland conf
 mkdir -p /etc/sddm.conf.d 
-curl -sSL https://raw.githubusercontent.com/$REPO/main/etc/sddm.conf.d/sddm-wayland.conf -o /etc/sddm.conf.d/10-wayland.conf
+curl -sSL https://raw.githubusercontent.com/$REPO/main/sddm.conf.d/sddm-wayland.conf -o /etc/sddm.conf.d/10-wayland.conf
 
 #systemd setup
 curl -sSL https://raw.githubusercontent.com/$REPO/main/systemd/system/lactd.service -o /etc/systemd/system/lactd.service 
@@ -32,11 +32,11 @@ systemctl enable lactd.service
 
 #sysctl.d setup
 mkdir -p /etc/sysctl.d 
-curl -sSL https://raw.githubusercontent.com/$REPO/main/etc/sysctl.d/99-cachyos-settings.conf -o /etc/sysctl.d/99-cachyos-settings.conf
+curl -sSL https://raw.githubusercontent.com/$REPO/main/sysctl.d/99-cachyos-settings.conf -o /etc/sysctl.d/99-cachyos-settings.conf
 
 #modprobe.d setup
 mkdir -p /etc/modprobe.d 
-curl -sSL https://raw.githubusercontent.com/$REPO/main/etc/modprobe.d/blacklist.conf -o /etc/modprobe.d/blacklist.conf
+curl -sSL https://raw.githubusercontent.com/$REPO/main/modprobe.d/blacklist.conf -o /etc/modprobe.d/blacklist.conf
 
 # rm .desktops
 rm /usr/share/applications/assistant.desktop 
