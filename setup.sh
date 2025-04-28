@@ -16,6 +16,11 @@ mkdir -p /etc/udev/rules.d
 curl -sSL https://raw.githubusercontent.com/$REPO/main/udev-rules/90-amdgpu.rules -o /etc/udev/rules.d/90-amdgpu.rules 
 curl -sSL https://raw.githubusercontent.com/$REPO/main/udev-rules/91-kfd.rules -o /etc/udev/rules.d/91-kfd.rules 
 curl -sSL https://raw.githubusercontent.com/$REPO/main/udev-rules/30-zram.rules -o /etc/udev/rules.d/30-zram.rules
+curl -sSL https://raw.githubusercontent.com/$REPO/main/udev-rules/40-hpet-permissions.rules -o /etc/udev/rules.d/40-hpet-permissions.rules
+curl -sSL https://raw.githubusercontent.com/$REPO/main/udev-rules/50-sata.rules -o /etc/udev/rules.d/50-sata.rules
+curl -sSL https://raw.githubusercontent.com/$REPO/main/udev-rules/60-ioschedulers.rules -o /etc/udev/rules.d/60-ioschedulers.rules
+curl -sSL https://raw.githubusercontent.com/$REPO/main/udev-rules/69-hdparm.rules -o /etc/udev/rules.d/69-hdparm.rules
+curl -sSL https://raw.githubusercontent.com/$REPO/main/udev-rules/99-cpu-dma-latency.rules -o /etc/udev/rules.d/99-cpu-dma-latency.rules
 curl -sSL https://raw.githubusercontent.com/$REPO/main/udev-rules/60-streamdeck.rules -o /etc/udev/rules.d/60-streamdeck.rules 
 curl -sSL https://raw.githubusercontent.com/$REPO/main/udev-rules/60-openrgb.rules -o /usr/lib/udev/rules.d/60-openrgb.rules
 
