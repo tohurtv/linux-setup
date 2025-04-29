@@ -90,6 +90,9 @@ cd WhiteSur-icon-theme
 ##redelete aur user
 #userdel -r aur
 
+#compile glib schemas
+glib-compile-schemas /usr/share/glib-2.0/schemas
+
 # clean pacman cache
 rm -rf /var/cache/pacman
 
