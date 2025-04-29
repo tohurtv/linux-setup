@@ -32,11 +32,14 @@ mkdir -p /etc/sddm.conf.d
 curl -sSL https://raw.githubusercontent.com/$REPO/main/sddm.conf.d/sddm-wayland.conf -o /etc/sddm.conf.d/10-wayland.conf
 
 #systemd setup
+rm /usr/lib/systemd/user/appmenu-gtk-module.service
+curl -sSL https://raw.githubusercontent.com/$REPO/main/systemd/user/appmenu-gtk-module.service -o /etc/systemd/user/appmenu-gtk-module.service
 curl -sSL https://raw.githubusercontent.com/$REPO/main/systemd/system/lactd.service -o /etc/systemd/system/lactd.service
 curl -sSL https://raw.githubusercontent.com/$REPO/main/systemd/system/pci-latency.service -o /etc/systemd/system/pci-latency.service
 curl -sSL https://raw.githubusercontent.com/$REPO/main/systemd/zram-generator.conf -o /etc/systemd/zram-generator.conf
 
 #Enbale services
+systemctl enable --global appmenu-gtk-module.service
 systemctl enable lactd.service
 systemctl enable pci-latency.service
 
