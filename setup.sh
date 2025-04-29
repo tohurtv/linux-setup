@@ -25,7 +25,7 @@ curl -sSL https://raw.githubusercontent.com/$REPO/main/udev-rules/60-streamdeck.
 curl -sSL https://raw.githubusercontent.com/$REPO/main/udev-rules/60-openrgb.rules -o /usr/lib/udev/rules.d/60-openrgb.rules
 
 #add scipts and binaries to the system
-curl -sSL https://raw.githubusercontent.com/$REPO/main/usr/bin/pci-latency -o /usr/bin/pci-latency
+curl -sSL https://raw.githubusercontent.com/$REPO/main/usr/bin/pci-latency -o /usr/bin/pci-latency && chmod +x /usr/bin/pci-latency
 
 #SDDM Wayland conf
 mkdir -p /etc/sddm.conf.d 
