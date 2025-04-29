@@ -72,8 +72,14 @@ ln -s /usr/lib/libopenh264.so /usr/lib/libopenh264.so.7
 rm -rf /var/cache/pacman
 
 #MacSequoia-kde theme
-curl -sSL https://raw.githubusercontent.com/vinceliuice/MacSequoia-kde/main/install.sh | bash -s -- --round
+cd /tmp
+git clone https://github.com/vinceliuice/MacSequoia-kde.git
+cd MacSequoia-kde
+./install.sh --round
 # WhiteSur gtk theme
-curl -sSL https://raw.githubusercontent.com/vinceliuice/WhiteSur-gtk-theme/main/install.sh | bash bash -s -- --dest /usr/share/themes --libadwaita 
+cd /tmp
+git clone https://github.com/vinceliuice/WhiteSur-gtk-theme.git
+cd WhiteSur-gtk-theme
+./install.sh --dest /usr/share/themes --libadwaita
 
 echo "Installation complete."
