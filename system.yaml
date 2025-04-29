@@ -37,7 +37,6 @@ packages:
   - 'vulkan-radeon'
   - 'vulkan-tools'
   - 'xpadneo-dkms-git'
-  - 'goverlay'
   - 'lib32-obs-vkcapture-git'
   - 'obs-vkcapture-git'
   - 'mongodb'
@@ -52,6 +51,16 @@ packages:
   - 'scx-scheds'
   - 'zram-generator'
   - 'mullvad-vpn'
+  - 'kvantum'
+  - 'appmenu-gtk-module'
+  - 'libdbusmenu-glib'
+  - 'libdbusmenu-gtk2'
+  - 'libdbusmenu-gtk3'
+  - 'libdbusmenu-lxqt'
+  - 'libdbusmenu-qt5'
+  - 'lib32-libdbusmenu-glib'
+  - 'lib32-libdbusmenu-gtk2'
+  - 'lib32-libdbusmenu-gtk3'
 # --- Davinci Resolve ---
   - 'glu'
   - 'gtk2'
@@ -82,8 +91,11 @@ package-repos:
     repo-url: 'https://cdn-mirror.chaotic.cx/$repo/$arch'
 
 aur-packages:
-  - 'plasma6-themes-vapor-steamos'
   - 'tela-circle-icon-theme-standard-git'
+  - 'whitesur-kde-theme'
+  - 'kvantum-theme-whitesur-git'
+  - 'whitesur-gtk-theme-git'
+  - 'whitesur-cursor-theme-git'
   - 'plasma6-applets-separator-git'
   - 'mpris-scrobbler'
   - 'notify-send-py'
@@ -93,6 +105,7 @@ services:
   - 'mongodb'
   - 'libvirtd'
   - 'scx'
+  - 'mullvad-daemon'
 
 commands:
   - 'curl -sSL https://raw.githubusercontent.com/tohurtv/Blend-os-setup/main/setup.sh | bash'
