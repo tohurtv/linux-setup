@@ -80,6 +80,6 @@ cd MacSequoia-kde
 cd /tmp
 git clone https://github.com/vinceliuice/WhiteSur-gtk-theme.git
 cd WhiteSur-gtk-theme
-./install.sh --dest /usr/share/themes --libadwaita
+./install.sh --dest /usr/share/themes
 
 echo "Installation complete."
