@@ -22,7 +22,7 @@ curl -sSL https://raw.githubusercontent.com/$REPO/main/udev-rules/60-ioscheduler
 curl -sSL https://raw.githubusercontent.com/$REPO/main/udev-rules/69-hdparm.rules -o /etc/udev/rules.d/69-hdparm.rules
 curl -sSL https://raw.githubusercontent.com/$REPO/main/udev-rules/99-cpu-dma-latency.rules -o /etc/udev/rules.d/99-cpu-dma-latency.rules
 curl -sSL https://raw.githubusercontent.com/$REPO/main/udev-rules/60-streamdeck.rules -o /etc/udev/rules.d/60-streamdeck.rules 
-curl -sSL https://raw.githubusercontent.com/$REPO/main/udev-rules/60-openrgb.rules -o /usr/lib/udev/rules.d/60-openrgb.rules
+#curl -sSL https://raw.githubusercontent.com/$REPO/main/udev-rules/60-openrgb.rules -o /usr/lib/udev/rules.d/60-openrgb.rules
 
 #add scipts and binaries to the system
 curl -sSL https://raw.githubusercontent.com/$REPO/main/usr/bin/pci-latency -o /usr/bin/pci-latency && chmod +x /usr/bin/pci-latency
@@ -36,12 +36,10 @@ curl -sSL https://raw.githubusercontent.com/$REPO/main/profile.d/appmenu-gtk-mod
 
 #systemd setup
 rm /usr/lib/systemd/user/appmenu-gtk-module.service
-curl -sSL https://raw.githubusercontent.com/$REPO/main/systemd/system/lactd.service -o /etc/systemd/system/lactd.service
 curl -sSL https://raw.githubusercontent.com/$REPO/main/systemd/system/pci-latency.service -o /etc/systemd/system/pci-latency.service
 curl -sSL https://raw.githubusercontent.com/$REPO/main/systemd/zram-generator.conf -o /etc/systemd/zram-generator.conf
 
 #Enbale services
-systemctl enable lactd.service
 systemctl enable pci-latency.service
 
 #sysctl.d setup
