@@ -72,10 +72,10 @@ rm /usr/share/applications/designer.desktop
 ln -s /usr/lib/libopenh264.so /usr/lib/libopenh264.so.7
 
 #whitesur-gtk-theme
-PKGDIR="/tmp/whitesur-gtk-theme-git"
-mkdir -p "$PKGDIR"
-curl -sSL "https://raw.githubusercontent.com/$REPO/main/PKGBUILDS/whitesur-gtk-theme-git/PKGBUILD" -o "$PKGDIR/PKGBUILD"
-paru -U --noconfirm "$PKGDIR/PKGBUILD"
+mkdir -p /tmp/whitesur-gtk-theme-git
+curl -sSL https://raw.githubusercontent.com/$REPO/main/PKGBUILDS/whitesur-gtk-theme-git/PKGBUILD -o /tmp/whitesur-gtk-theme-git/PKGBUILD
+cd /tmp/whitesur-gtk-theme-git
+sudo -u aur makepkg -si --noconfirm
 
 # clean pacman cache
 rm -rf /var/cache/pacman
