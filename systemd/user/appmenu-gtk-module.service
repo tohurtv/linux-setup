@@ -1,7 +1,6 @@
 [Unit]
 Description=Appmenu GTK Module Environment Variables
 After=dbus.service
-Before=plasma-workspace.service gnome-session.service
 PartOf=graphical-session.target
 
 [Service]
@@ -16,5 +15,5 @@ ExecStopPost=/bin/sh -ec '\
   /usr/bin/dbus-update-activation-environment --verbose --systemd GTK_MODULES'
 
 [Install]
-WantedBy=plasma-session.target gnome-session.target xfce-session.target mate-session.target
+WantedBy=graphical-session.target
 
