@@ -71,4 +71,9 @@ ln -s /usr/lib/libopenh264.so /usr/lib/libopenh264.so.7
 # clean pacman cache
 rm -rf /var/cache/pacman
 
+#MacSequoia-kde theme
+curl -sSL https://raw.githubusercontent.com/vinceliuice/MacSequoia-kde/main/install.sh | bash -s -- --round
+# WhiteSur gtk theme
+curl -sSL https://raw.githubusercontent.com/vinceliuice/WhiteSur-gtk-theme/main/install.sh | bash bash -s -- --dest /usr/share/themes --libadwaita 
+
 echo "Installation complete."
