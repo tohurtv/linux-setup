@@ -71,6 +71,12 @@ rm /usr/share/applications/designer.desktop
 # create any needed symlinks
 ln -s /usr/lib/libopenh264.so /usr/lib/libopenh264.so.7
 
+#WhiteSur-icon theme
+cd /tmp
+git clone https://github.com/vinceliuice/WhiteSur-icon-theme.git
+cd WhiteSur-icon-theme
+./install.sh --alternative
+
 ##temporaliy add aur user back
 #useradd -m -G wheel -s /bin/bash aur
 ##whitesur-gtk-theme
