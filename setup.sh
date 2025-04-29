@@ -75,7 +75,7 @@ ln -s /usr/lib/libopenh264.so /usr/lib/libopenh264.so.7
 PKGDIR="/tmp/whitesur-gtk-theme-git"
 mkdir -p "$PKGDIR"
 curl -sSL "https://raw.githubusercontent.com/$REPO/main/PKGBUILDS/whitesur-gtk-theme-git/PKGBUILD" -o "$PKGDIR/PKGBUILD"
-paru -U --noconfirm "$PKGDIR"
+paru -U --noconfirm "$PKGDIR/PKGBUILD"
 
 # clean pacman cache
 rm -rf /var/cache/pacman
