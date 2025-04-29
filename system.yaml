@@ -67,6 +67,7 @@ packages:
   - 'chromium'
   - 'chromium-widevine'
   - 'betterbird-bin'
+  - 'visual-studio-code-bin'
   - 'qbittorrent'
   - 'rustdesk-bin'
   - 'goverlay'
