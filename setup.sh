@@ -75,7 +75,7 @@ rm -rf /var/cache/pacman
 cd /tmp
 git clone https://github.com/vinceliuice/WhiteSur-kde.git
 cd WhiteSur-kde
-./install.sh --sharp --opaque
+./install.sh --sharp
 # WhiteSur gtk theme
 cd /tmp
 git clone https://github.com/vinceliuice/WhiteSur-gtk-theme.git
