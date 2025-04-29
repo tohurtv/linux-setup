@@ -74,15 +74,4 @@ ln -s /usr/lib/libopenh264.so /usr/lib/libopenh264.so.7
 # clean pacman cache
 rm -rf /var/cache/pacman
 
-#WhiteSur-kde theme
-cd /tmp
-git clone https://github.com/vinceliuice/WhiteSur-kde.git
-cd WhiteSur-kde
-./install.sh --sharp
-# WhiteSur gtk theme
-cd /tmp
-git clone https://github.com/vinceliuice/WhiteSur-gtk-theme.git
-cd WhiteSur-gtk-theme
-./install.sh --dest /usr/share/themes
-
 echo "Installation complete."
