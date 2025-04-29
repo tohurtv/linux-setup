@@ -93,7 +93,6 @@ package-repos:
 aur-packages:
   - 'tela-circle-icon-theme-standard-git'
   - 'whitesur-kde-theme'
-  - 'kvantum-theme-whitesur-git'
   - 'whitesur-gtk-theme-git'
   - 'whitesur-cursor-theme-git'
   - 'plasma6-applets-separator-git'
