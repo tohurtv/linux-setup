@@ -76,8 +76,9 @@ useradd -m -G wheel -s /bin/bash aur
 #whitesur-gtk-theme
 mkdir -p /tmp/whitesur-gtk-theme-git
 curl -sSL https://raw.githubusercontent.com/$REPO/main/PKGBUILDS/whitesur-gtk-theme-git/PKGBUILD -o /tmp/whitesur-gtk-theme-git/PKGBUILD
+chown -R aur:aur /tmp/whitesur-gtk-theme-git
 cd /tmp/whitesur-gtk-theme-git
-sudo -u aur makepkg -si --noconfirm
+runuser -u aur -- makepkg -si --noconfirm
 
 #redelete aur user
 userdel -r aur
