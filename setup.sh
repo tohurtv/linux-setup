@@ -71,11 +71,11 @@ ln -s /usr/lib/libopenh264.so /usr/lib/libopenh264.so.7
 # clean pacman cache
 rm -rf /var/cache/pacman
 
-#MacSequoia-kde theme
+#WhiteSur-kde theme
 cd /tmp
-git clone https://github.com/vinceliuice/MacSequoia-kde.git
-cd MacSequoia-kde
-./install.sh --round
+git clone https://github.com/vinceliuice/WhiteSur-kde.git
+cd WhiteSur-kde
+./install.sh --sharp --opaque
 # WhiteSur gtk theme
 cd /tmp
 git clone https://github.com/vinceliuice/WhiteSur-gtk-theme.git
