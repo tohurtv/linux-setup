@@ -41,7 +41,7 @@ curl -sSL https://raw.githubusercontent.com/$REPO/main/systemd/zram-generator.co
 
 #Enbale services
 systemctl enable pci-latency.service
-systemctl enable --global gpu-screen-recorder-ui
+systemctl enable --user --global gpu-screen-recorder-ui
 
 #sysctl.d setup
 mkdir -p /etc/sysctl.d 
