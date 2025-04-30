@@ -44,7 +44,7 @@ systemctl enable pci-latency.service
 
 #sysctl.d setup
 mkdir -p /etc/sysctl.d 
-curl -sSL https://raw.githubusercontent.com/$REPO/main/sysctl.d/99-cachyos-settings.conf -o /etc/sysctl.d/99-cachyos-settings.conf
+curl -sSL https://raw.githubusercontent.com/$REPO/main/sysctl.d/99-settings.conf -o /etc/sysctl.d/99-settings.conf
 
 #modprobe.d setup
 mkdir -p /etc/modprobe.d 
