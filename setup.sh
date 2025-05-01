@@ -42,7 +42,6 @@ curl -sSL https://raw.githubusercontent.com/$REPO/main/systemd/zram-generator.co
 systemctl enable pci-latency.service
 
 #sysctl.d setup
-mkdir -p /etc/sysctl.d 
 curl -sSL https://raw.githubusercontent.com/$REPO/main/sysctl.d/99-settings.conf -o /etc/sysctl.d/99-settings.conf
 
 #modprobe.d setup
