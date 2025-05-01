@@ -90,7 +90,11 @@ cd /tmp
 pacman -S --noconfirm cmake ninja eigen glew libpng lz4 bzip2 boost gtest opencv fmt python
 git clone --recursive https://gitlab.freedesktop.org/mateosss/basalt.git
 cd basalt
-cmake DCMAKE_POLICY_VERSION_MINIMUM=3.5 --preset library # use "development" instead of "library" if you want extra binaries and debug symbols
+cmake -B build -G Ninja \
+  -DCMAKE_BUILD_TYPE=RelWithDebInfo \
+  -DCMAKE_INSTALL_PREFIX=/usr \
+  -DBASALT_BUILD_SHARED_LIBRARY_ONLY=ON \
+  -DCMAKE_POLICY_VERSION_MINIMUM=3.5
 sudo cmake --build build --target install
 
 #compile glib schemas
