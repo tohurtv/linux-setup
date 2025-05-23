@@ -1,2 +1,2 @@
-# Blend-os-setup
-My personal system.yaml and scripts and configs I use for my blendOS setup
+# linux-setup
+My personal scripts and configs I use for my linux desktops
