@@ -9,7 +9,7 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 # Define variables
-REPO="tohurtv/Blend-os-setup"
+REPO="tohurtv/linux-setup"
 
 #udev rules
 curl -sSL https://raw.githubusercontent.com/$REPO/main/udev-rules/90-amdgpu.rules -o /etc/udev/rules.d/90-amdgpu.rules 
@@ -20,7 +20,7 @@ curl -sSL https://raw.githubusercontent.com/$REPO/main/udev-rules/50-sata.rules 
 curl -sSL https://raw.githubusercontent.com/$REPO/main/udev-rules/60-ioschedulers.rules -o /etc/udev/rules.d/60-ioschedulers.rules
 curl -sSL https://raw.githubusercontent.com/$REPO/main/udev-rules/69-hdparm.rules -o /etc/udev/rules.d/69-hdparm.rules
 curl -sSL https://raw.githubusercontent.com/$REPO/main/udev-rules/99-cpu-dma-latency.rules -o /etc/udev/rules.d/99-cpu-dma-latency.rules
-curl -sSL https://raw.githubusercontent.com/$REPO/main/udev-rules/60-streamdeck.rules -o /etc/udev/rules.d/60-streamdeck.rules 
+#curl -sSL https://raw.githubusercontent.com/$REPO/main/udev-rules/60-streamdeck.rules -o /etc/udev/rules.d/60-streamdeck.rules 
 #curl -sSL https://raw.githubusercontent.com/$REPO/main/udev-rules/60-openrgb.rules -o /usr/lib/udev/rules.d/60-openrgb.rules
 
 #add scipts and binaries to the system
@@ -69,10 +69,10 @@ rm /usr/share/applications/designer.desktop
 ln -s /usr/lib/libopenh264.so /usr/lib/libopenh264.so.7
 
 #WhiteSur-icon theme
-cd /tmp
-git clone https://github.com/vinceliuice/WhiteSur-icon-theme.git
-cd WhiteSur-icon-theme
-./install.sh --alternative
+#cd /tmp
+#git clone https://github.com/vinceliuice/WhiteSur-icon-theme.git
+#cd WhiteSur-icon-theme
+#./install.sh --alternative
 
 ##temporaliy add aur user back
 #useradd -m -G wheel -s /bin/bash aur
@@ -86,16 +86,6 @@ cd WhiteSur-icon-theme
 ##redelete aur user
 #userdel -r aur
 
-cd /tmp
-pacman -S --noconfirm cmake ninja eigen glew libpng lz4 bzip2 boost gtest opencv fmt python
-git clone --recursive https://gitlab.freedesktop.org/mateosss/basalt.git
-cd basalt
-cmake -B build -G Ninja \
-  -DCMAKE_BUILD_TYPE=RelWithDebInfo \
-  -DCMAKE_INSTALL_PREFIX=/usr \
-  -DBASALT_BUILD_SHARED_LIBRARY_ONLY=ON \
-  -DCMAKE_POLICY_VERSION_MINIMUM=3.5
-sudo cmake --build build --target install
 
 #compile glib schemas
 glib-compile-schemas /usr/share/glib-2.0/schemas
