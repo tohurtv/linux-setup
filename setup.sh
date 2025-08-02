@@ -55,8 +55,7 @@ curl -sSL https://raw.githubusercontent.com/$REPO/main/modprobe.d/blacklist.conf
 # rm .desktops
 rm /usr/share/applications/assistant.desktop 
 rm /usr/share/applications/avahi-discover.desktop 
-rm /usr/share/applications/bvnc.desktop
-rm /usr/share/applications/electron*.desktop 
+rm /usr/share/applications/bvnc.desktop 
 rm /usr/share/applications/*-openjdk.desktop 
 rm /usr/share/applications/linguist.desktop 
 rm /usr/share/applications/lstopo.desktop 
