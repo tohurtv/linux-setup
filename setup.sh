@@ -59,10 +59,9 @@ rm /usr/share/applications/lstopo.desktop
 rm /usr/share/applications/qdbusviewer.desktop 
 rm /usr/share/applications/qv4l2.desktop 
 rm /usr/share/applications/qvidcap.desktop 
-rm /usr/share/applications/stoken-*.desktop 
-rm /usr/share/applications/org.kde.kuserfeedback-console.desktop 
+rm /usr/share/applications/stoken-*.desktop
 rm /usr/share/applications/bssh.desktop 
-rm /../usr/share/applications/cups.desktop 
+rm /usr/share/applications/cups.desktop 
 rm /usr/share/applications/designer.desktop
 
 # create any needed symlinks
