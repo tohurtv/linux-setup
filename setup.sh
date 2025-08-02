@@ -11,6 +11,10 @@ fi
 # Define variables
 REPO="tohurtv/linux-setup"
 
+#defaults
+curl -sSL https://raw.githubusercontent.com/$REPO/main/default/grub -o /etc/default/grub
+curl -sSL https://raw.githubusercontent.com/$REPO/main/default/scx -o /etc/default/scx
+
 #udev rules
 curl -sSL https://raw.githubusercontent.com/$REPO/main/udev-rules/90-amdgpu.rules -o /etc/udev/rules.d/90-amdgpu.rules 
 curl -sSL https://raw.githubusercontent.com/$REPO/main/udev-rules/91-kfd.rules -o /etc/udev/rules.d/91-kfd.rules 
