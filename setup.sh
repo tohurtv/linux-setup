@@ -26,6 +26,7 @@ curl -sSL https://raw.githubusercontent.com/$REPO/main/udev-rules/99-cpu-dma-lat
 #modules-load.d
 curl -sSL https://raw.githubusercontent.com/$REPO/main/modules-load.d/i2c-dev.conf -o /etc/modules-load.d/i2c-dev.conf
 curl -sSL https://raw.githubusercontent.com/$REPO/main/modules-load.d/i2c-piix4.conf -o /etc/modules-load.d/i2c-piix4.conf
+curl -sSL https://raw.githubusercontent.com/$REPO/main/modules-load.d/ntsync.conf -o /etc/modules-load.d/ntsync.conf
 
 #add scipts and binaries to the system
 curl -sSL https://raw.githubusercontent.com/$REPO/main/usr/bin/pci-latency -o /usr/bin/pci-latency && chmod +x /usr/bin/pci-latency
