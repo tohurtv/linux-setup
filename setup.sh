@@ -23,6 +23,10 @@ curl -sSL https://raw.githubusercontent.com/$REPO/main/udev-rules/99-cpu-dma-lat
 #curl -sSL https://raw.githubusercontent.com/$REPO/main/udev-rules/60-streamdeck.rules -o /etc/udev/rules.d/60-streamdeck.rules 
 #curl -sSL https://raw.githubusercontent.com/$REPO/main/udev-rules/60-openrgb.rules -o /usr/lib/udev/rules.d/60-openrgb.rules
 
+#modules-load.d
+curl -sSL https://raw.githubusercontent.com/$REPO/main/modules-load.d/i2c-dev.conf -o /etc/modules-load.d/i2c-dev.conf
+curl -sSL https://raw.githubusercontent.com/$REPO/main/modules-load.d/i2c-piix4.conf -o /etc/modules-load.d/i2c-piix4.conf
+
 #add scipts and binaries to the system
 curl -sSL https://raw.githubusercontent.com/$REPO/main/usr/bin/pci-latency -o /usr/bin/pci-latency && chmod +x /usr/bin/pci-latency
 
@@ -66,25 +70,6 @@ rm /usr/share/applications/designer.desktop
 
 # create any needed symlinks
 ln -s /usr/lib/libopenh264.so /usr/lib/libopenh264.so.7
-
-#WhiteSur-icon theme
-#cd /tmp
-#git clone https://github.com/vinceliuice/WhiteSur-icon-theme.git
-#cd WhiteSur-icon-theme
-#./install.sh --alternative
-
-##temporaliy add aur user back
-#useradd -m -G wheel -s /bin/bash aur
-##whitesur-gtk-theme
-#mkdir -p /tmp/whitesur-gtk-theme-git
-#curl -sSL https://raw.githubusercontent.com/$REPO/main/PKGBUILDS/whitesur-gtk-theme-git/PKGBUILD -o /tmp/whitesur-gtk-theme-git/PKGBUILD
-#chown -R aur:aur /tmp/whitesur-gtk-theme-git
-#cd /tmp/whitesur-gtk-theme-git
-#sudo -u aur makepkg -si --noconfirm
-
-##redelete aur user
-#userdel -r aur
-
 
 #compile glib schemas
 glib-compile-schemas /usr/share/glib-2.0/schemas
